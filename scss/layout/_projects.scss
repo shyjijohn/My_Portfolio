@@ -1,0 +1,101 @@
+// $primary-blue: #6cb6d1;
+// $text-dark: #333645; // The navy-ish dark color in the titles
+// $text-muted: #7e8188;
+
+.portfolio {
+  // padding: 60px 20px;
+  // max-width: 1200px;
+  // margin: 0 auto;
+
+
+  padding-bottom: 4%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: green;
+
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: $accent-blue;
+    position: relative;
+    background-color: pink;
+  }
+
+
+  .project-grid {
+    display: grid;
+    // Desktop: 3 columns. Tablet: 2 columns. Mobile: 1 column.
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px 30px; // Vertical gap 40px, Horizontal gap 30px
+    background-color: red;
+
+    @media (min-width: 600px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .project-card {
+    .image-wrapper {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+
+      img {
+        width: 100%;
+        display: block;
+        height: 100%;
+      }
+
+      &:hover {
+        transform: translateY(-5px);
+        cursor: pointer;
+      }
+    }
+
+    .project-content {
+      h3 {
+        color: $text-dark;
+        font-size: 1.3rem;
+        margin: 0 0 10px 0;
+        font-family: sans-serif;
+        font-weight: 600;
+      }
+
+      .view-project {
+        text-decoration: none;
+        color: $text-muted;
+        font-size: 0.9rem;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        transition: color 0.2s ease;
+
+        .arrow {
+          margin-left: 8px;
+          font-size: 1.2rem;
+        }
+
+        &:hover {
+          color: $primary-blue;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .portfolio {
+    margin-left: $sidebar-width; // Push content to the right of the sidebar
+    width: calc(100% - $sidebar-width);
+  }
+}

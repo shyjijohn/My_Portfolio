@@ -1,0 +1,109 @@
+.sidebar {
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+// Sidebar Block
+.sidebar {
+  width: $sidebar-width;
+  height: 100vh;
+  background-color: $bg-color;
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  position: fixed; // Assuming it's fixed on the left
+  top: 0;
+  left: 0;
+  padding: 1.5rem 0.5rem 2rem 0.5rem; // Adjust padding as needed
+  z-index: 1000;
+
+  // 1. Logo Section
+  &__logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+
+  .logo-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // It's a bit ambiguous, but this matches the white circle effect
+    // with a slight background variation
+    background-color: transparent;
+
+    .logo-initial {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: $accent-blue;
+    }
+  }
+
+  // 2. Navigation Section
+  &__nav {
+    flex-grow: 1; // Pushes social footer to the bottom
+    display: flex;
+    justify-content: center; // Horizontally centered nav
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.65rem; // Space between links
+      width: 100%; // Ensure links span full width
+    }
+
+    li {
+      text-align: center;
+    }
+
+    a {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600; // Increased weight slightly to match the image
+      text-decoration: none;
+      color: $text-color;
+      transition: $transition;
+      text-transform: capitalize;
+      position: relative; // Crucial: This anchors the absolute line
+      padding-bottom: 8px; // Space for the line to sit under the text
+
+      // Create the line structure but hide it by default
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 25px;
+        height: 2px;
+        background-color: $accent-blue;
+        border-radius: 2px;
+
+        // Smooth fade/scale effect
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        opacity: 0;
+      }
+
+      // Show the line on Hover OR when Active
+      &:hover,
+      &.active {
+        color: $active-link-color;
+
+        &::after {
+          opacity: 1;
+          transform: translateX(-50%) scaleX(1);
+        }
+      }
+    }
+  }
+}

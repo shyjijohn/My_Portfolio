@@ -1,0 +1,114 @@
+.contact-section {
+  font-family: sans-serif;
+  // padding: 10%;
+
+
+  .contact-container {
+    display: grid;
+    grid-template-columns: 1fr; // Stacked on mobile
+    gap: 50px;
+
+    @media (min-width: 900px) {
+      grid-template-columns: 1fr 2fr; // 2 columns on desktop
+    }
+  }
+
+  .contact-info {
+    h2 {
+      font-size: 2.5rem;
+      color: $text-navy;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: $text-muted;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .contact-details {
+      margin-bottom: 25px;
+
+      a {
+        display: block;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $text-navy;
+        text-decoration: none;
+        margin-bottom: 5px;
+
+        &:hover {
+          color: #6cb6d1;
+        }
+      }
+    }
+  }
+
+  .contact-form {
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+
+      input,
+      textarea {
+        background-color: $input-bg;
+        border: none;
+        border-radius: 4px;
+        padding: 15px;
+        font-size: 1rem;
+        width: 100%;
+        outline: none;
+
+        &::placeholder {
+          color: #888;
+        }
+      }
+
+      textarea {
+        height: 150px;
+        resize: vertical;
+      }
+
+      .full-width {
+        grid-column: span 2; // Spans across both columns
+      }
+
+      // On mobile, first and last name should also be full width
+      @media (max-width: 600px) {
+        grid-template-columns: 1fr;
+
+        input,
+        textarea,
+        .full-width {
+          grid-column: span 1;
+        }
+      }
+    }
+
+    .submit-btn {
+      margin-top: 20px;
+      background: transparent;
+      border: 2px solid $text-navy;
+      color: $text-navy;
+      padding: 12px 45px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: $text-navy;
+        color: white;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .contact-section {
+    margin-left: $sidebar-width; // Push content to the right of the sidebar
+    width: calc(100% - $sidebar-width);
+  }
+}
