@@ -37,7 +37,7 @@
     }
 
     @media (min-width: 1024px) {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
@@ -100,8 +100,9 @@
 
 @media (min-width: 768px) {
   .portfolio {
-    margin-left: $sidebar-width; // Push content to the right of the sidebar
-    width: calc(100% - $sidebar-width);
+    max-width: 1200px;
+    // margin-left: $sidebar-width; // Push content to the right of the sidebar
+    // width: calc(100% - $sidebar-width);
     padding: 10% 0;
   }
 }

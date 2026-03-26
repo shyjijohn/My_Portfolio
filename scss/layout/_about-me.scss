@@ -94,17 +94,18 @@ $text-light: #666;
     padding-bottom: 4%;
     line-height: 1.8;
     color: $text-dark;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     // background-color: red;
 
-    .container {
-        // max-width: 800px;
-        // padding: 0 10%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        // background-color: blue;
-    }
+    // .container {
+    //     // max-width: 800px;
+    //     // padding: 0 10%;
+
+    //     // background-color: blue;
+    // }
 
     h2 {
         font-size: 2rem;
@@ -132,18 +133,20 @@ $text-light: #666;
 
 @media (min-width: 768px) {
     .hero {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
+        // display: flex;
+        // flex-direction: column;
+        // align-items: center;
+        // justify-content: center;
+        // text-align: center;
+
+        &__overlay {
+            margin-left: $sidebar-width; // Push content to the right of the sidebar
+            width: calc(100% - $sidebar-width);
+        }
     }
 
     .bio-section {
-        padding: 10% 0;display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
+        padding: 10% 0;
+        max-width: 1200px;
     }
 }

@@ -25,11 +25,13 @@
   }
 
   .contact-info {
-    h2 {
-      font-size: 2.5rem;
-      color: $text-navy;
-      margin-bottom: 20px;
-    }
+   h3 {
+    // margin: 15px 0;
+    font-size: 1.6rem;
+    align-self: center;
+    margin-bottom: 10px;
+  }
+
 
     p {
       color: $text-muted;
@@ -40,16 +42,20 @@
     .contact-details {
       margin-bottom: 25px;
 
-      a {
-        display: block;
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: $text-navy;
-        text-decoration: none;
-        margin-bottom: 5px;
+      p {
+        font-size: 1rem;
+        font-weight: 400;
 
-        &:hover {
-          color: #6cb6d1;
+
+        span {
+          // display: block;
+          font-size: 1rem;
+          font-weight: 700;
+          color: $text-navy;
+          text-decoration: none;
+          // margin-bottom: 5px;
+
+         
         }
       }
     }
@@ -119,8 +125,9 @@
 
 @media (min-width: 768px) {
   .contact-section {
-    margin-left: $sidebar-width; // Push content to the right of the sidebar
-    width: calc(100% - $sidebar-width);
+    max-width: 1200px;
+    // margin-left: $sidebar-width; // Push content to the right of the sidebar
+    // width: calc(100% - $sidebar-width);
     padding: 10% 0;
   }
 }
