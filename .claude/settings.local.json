@@ -3,7 +3,8 @@
     "allow": [
       "Bash(npx sass *)",
       "Bash(grep -v \"DEPRECATION\\\\|More info\\\\|@import\\\\|scss\\\\\\\\\\\\\\\\style\\\\|^\\\\s*$\\\\|╷\\\\|╵\\\\|│\\\\|WARNING\")",
-      "Bash(grep -v \"DEPRECATION\\\\|More info\\\\|@import\\\\|scss\\\\\\\\\\\\\\\\style\\\\|^\\\\s*$\\\\|╷\\\\|╵\\\\|│\\\\|WARNING\\\\|Run in verbose\")"
+      "Bash(grep -v \"DEPRECATION\\\\|More info\\\\|@import\\\\|scss\\\\\\\\\\\\\\\\style\\\\|^\\\\s*$\\\\|╷\\\\|╵\\\\|│\\\\|WARNING\\\\|Run in verbose\")",
+      "Bash(sass scss/style.scss css/style.css)"
     ]
   }
 }

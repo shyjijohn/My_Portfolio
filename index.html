@@ -28,10 +28,10 @@
       <nav class="sidebar__nav">
         <ul>
           <li><a href="#about"><i class="fas fa-user"></i> About Me</a></li>
-        <li><a href="#portfolio"><i class="fas fa-briefcase"></i> My Portfolio</a></li>
-        <li><a href="#coding"><i class="fas fa-code"></i> Coding Examples</a></li>
-        <li><a href="#scheme"><i class="fas fa-layer-group"></i> SCS Scheme</a></li>
-        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact Me</a></li>
+          <li><a href="#portfolio"><i class="fas fa-briefcase"></i> My Portfolio</a></li>
+          <li><a href="#coding"><i class="fas fa-code"></i> Coding Examples</a></li>
+          <li><a href="#scheme"><i class="fas fa-layer-group"></i> SCS Scheme</a></li>
+          <li><a href="#contact"><i class="fas fa-envelope"></i> Contact Me</a></li>
         </ul>
       </nav>
       <div class="sidebar__social">
@@ -135,6 +135,9 @@
           </div>
           <div class="project-content">
             <h3>Netmatters Homepage</h3>
+            <p class="project-desc">Recreation of the Netmatters company homepage - Built with <strong>HTML</strong>,
+              <strong>SCSS</strong>, and <strong>JavaScript</strong> - featuring a responsive layout and CSS animations.
+            </p>
             <a href="https://netmatters.shyji-john.netmatters-scs.co.uk/" class="view-project">
               Live Demo <span class="arrow">&rarr;</span>
             </a>
@@ -170,6 +173,7 @@
           </div>
           <div class="project-content">
             <h3>Project 2</h3>
+            <p class="project-desc">Just a placeholder.</p>
             <a href="#" class="view-project">
               Live Demo <span class="arrow">&rarr;</span>
             </a>
@@ -181,6 +185,7 @@
           </div>
           <div class="project-content">
             <h3>Project 3</h3>
+            <p class="project-desc">Just a placeholder.</p>
             <a href="#" class="view-project">
               Live Demo <span class="arrow">&rarr;</span>
             </a>
@@ -192,6 +197,7 @@
           </div>
           <div class="project-content">
             <h3>Project 4</h3>
+            <p class="project-desc">Just a placeholder.</p>
             <a href="#" class="view-project">
               Live Demo <span class="arrow">&rarr;</span>
             </a>
@@ -207,7 +213,55 @@
 
     <section class="coding-examples" id="coding">
       <h2>Coding Examples</h2>
-      <p>Coming Soon...</p>
+
+      <div class="code-example-card">
+        <div class="code-example-header">
+          <span class="code-dot red"></span>
+          <span class="code-dot yellow"></span>
+          <span class="code-dot green"></span>
+          <span class="code-filename">typingEffect.js</span>
+        </div>
+        <pre class="code-block"><code><span class="kw">function</span> <span class="fn">startRoleTyping</span>(selector) {
+  <span class="kw">new</span> <span class="fn">Typed</span>(selector, {
+    strings: [<span class="str">'Web Developer'</span>, <span class="str">'Frontend Developer'</span>, <span class="str">'UI/UX Enthusiast'</span>],
+    typeSpeed: <span class="num">60</span>,
+    backSpeed: <span class="num">40</span>,
+    backDelay: <span class="num">1800</span>,
+    loop: <span class="kw">true</span>,
+    showCursor: <span class="kw">true</span>,
+    cursorChar: <span class="str">'|'</span>
+  });
+}
+
+<span class="kw">new</span> <span class="fn">Typed</span>(<span class="str">'#name-typed-desk'</span>, {
+  strings: [<span class="str">'Shyji John'</span>],
+  typeSpeed: <span class="num">80</span>,
+  loop: <span class="kw">false</span>,
+  showCursor: <span class="kw">false</span>,
+  onComplete: <span class="kw">function</span>() {
+    <span class="fn">startRoleTyping</span>(<span class="str">'#role-typed-desk'</span>);
+  }
+});</code></pre>
+
+        <div class="code-meta">
+          <div class="code-meta-item">
+            <span class="meta-label">Language</span>
+            <span class="meta-value">JavaScript - using the Typed.js library</span>
+          </div>
+          <div class="code-meta-item">
+            <span class="meta-label">What it does</span>
+            <span class="meta-value">Animates a typewriter effect on the hero section. First it types the name
+              <em>"Shyji John"</em>, and once that completes, it loops through a list of role titles &mdash; <em>Web
+                Developer</em>, <em>Frontend Developer</em>, and <em>UI/UX Enthusiast</em> &mdash; typing and deleting
+              each one continuously.</span>
+          </div>
+          <div class="code-meta-item">
+            <span class="meta-label">Why I used it</span>
+            <span class="meta-value">Animating the name before looping through roles looks smooth and natural. Typed.js
+              makes it simple and lightweight.</span>
+          </div>
+        </div>
+      </div>
     </section>
     <div class="desktop-only">
       <hr style="display: block; width: 100%;">

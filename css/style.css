@@ -492,8 +492,20 @@ body {
 .portfolio .project-card .project-content h3 {
   color: #333;
   font-size: 1.3rem;
-  margin: 0 0 10px 0;
+  margin: 0 0 8px 0;
   font-family: sans-serif;
+  font-weight: 600;
+}
+.portfolio .project-card .project-content .project-desc {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.55;
+  margin: 0 0 12px 0;
+  text-align: center;
+  max-width: 340px;
+}
+.portfolio .project-card .project-content .project-desc strong {
+  color: #0ea5e9;
   font-weight: 600;
 }
 .portfolio .project-card .project-content .view-project {
@@ -522,18 +534,114 @@ body {
 .coding-examples {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
   padding-bottom: 4%;
+  width: 100%;
 }
 .coding-examples h2 {
   font-size: 2rem;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   color: #0ea5e9;
   position: relative;
+  align-self: center;
 }
-.coding-examples p {
-  font-size: 1.1rem;
+
+.code-example-card {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  background-color: #1e1e2e;
+  font-family: "Courier New", Courier, monospace;
+}
+.code-example-card .code-example-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background-color: #2a2a3d;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.code-example-card .code-example-header .code-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.code-example-card .code-example-header .code-dot.red {
+  background-color: #ff5f57;
+}
+.code-example-card .code-example-header .code-dot.yellow {
+  background-color: #febc2e;
+}
+.code-example-card .code-example-header .code-dot.green {
+  background-color: #28c840;
+}
+.code-example-card .code-example-header .code-filename {
+  margin-left: 10px;
+  font-size: 0.8rem;
+  color: #888aaa;
+  letter-spacing: 0.04em;
+}
+.code-example-card .code-block {
+  margin: 0;
+  padding: 24px 28px;
+  overflow-x: auto;
+  font-size: 0.88rem;
+  line-height: 1.75;
+  color: #cdd6f4;
+  background: transparent;
+  white-space: pre;
+}
+.code-example-card .code-block code {
+  display: block;
+}
+.code-example-card .code-block code .kw {
+  color: #cba6f7;
+}
+.code-example-card .code-block code .fn {
+  color: #89b4fa;
+}
+.code-example-card .code-block code .str {
+  color: #a6e3a1;
+}
+.code-example-card .code-block code .num {
+  color: #fab387;
+}
+.code-example-card .code-meta {
+  padding: 28px;
+  background-color: #ffffff;
+  border-top: 3px solid #0ea5e9;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.code-example-card .code-meta .code-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.code-example-card .code-meta .code-meta-item .meta-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #0ea5e9;
+}
+.code-example-card .code-meta .code-meta-item .meta-value {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.6;
+}
+.code-example-card .code-meta .code-meta-item .meta-value a {
+  color: #0ea5e9;
+  text-decoration: none;
+}
+.code-example-card .code-meta .code-meta-item .meta-value a:hover {
+  text-decoration: underline;
+}
+.code-example-card .code-meta .code-meta-item .meta-value em {
+  font-style: italic;
   color: #666;
 }
 
@@ -541,6 +649,14 @@ body {
   .coding-examples {
     max-width: 1200px;
     padding: 10% 0;
+  }
+  .code-example-card .code-meta {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 32px;
+  }
+  .code-example-card .code-meta .code-meta-item {
+    flex: 1;
   }
 }
 .scs-carousel {
@@ -752,3 +868,5 @@ body {
     padding: 10% 0;
   }
 }
+
+/*# sourceMappingURL=style.css.map */
