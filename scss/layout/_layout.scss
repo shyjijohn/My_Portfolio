@@ -9,6 +9,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  min-width: 460px;
 }
 
 //wrapper
@@ -38,9 +39,20 @@ body {
 
 @media (min-width: 1024px) {
   .wrapper {
-    margin-left: $sidebar-width; // Push content to the right of the sidebar
+    margin-left: $sidebar-width;
     width: calc(100% - $sidebar-width);
-    // padding: 5% 20%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .wrapper {
+    align-items: center;
+
+    > section,
+    > div {
+      width: 100%;
+      max-width: 1200px;
+    }
   }
 }
 

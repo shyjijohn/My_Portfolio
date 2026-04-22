@@ -9,6 +9,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  min-width: 460px;
 }
 
 .wrapper {
@@ -29,6 +30,16 @@ body {
   .wrapper {
     margin-left: 200px;
     width: calc(100% - 200px);
+  }
+}
+@media (min-width: 1200px) {
+  .wrapper {
+    align-items: center;
+  }
+  .wrapper > section,
+  .wrapper > div {
+    width: 100%;
+    max-width: 1200px;
   }
 }
 .mobile-only {
