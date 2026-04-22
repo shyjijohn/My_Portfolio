@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npx sass *)"
+      "Bash(npx sass *)",
+      "Bash(grep -v \"DEPRECATION\\\\|More info\\\\|@import\\\\|scss\\\\\\\\\\\\\\\\style\\\\|^\\\\s*$\\\\|╷\\\\|╵\\\\|│\\\\|WARNING\")",
+      "Bash(grep -v \"DEPRECATION\\\\|More info\\\\|@import\\\\|scss\\\\\\\\\\\\\\\\style\\\\|^\\\\s*$\\\\|╷\\\\|╵\\\\|│\\\\|WARNING\\\\|Run in verbose\")"
     ]
   }
 }

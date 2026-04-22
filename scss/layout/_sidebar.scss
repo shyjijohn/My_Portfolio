@@ -51,7 +51,7 @@
   &__nav {
     // flex-grow: 1; // Pushes social footer to the bottom
     display: flex;
-    justify-content: center; // Horizontally centered nav
+    justify-content: flex-start; 
 
     ul {
       list-style: none;
@@ -64,11 +64,17 @@
     }
 
     li {
-      text-align: center;
+      text-align: left;
+      padding-left: 1rem;
+    }
+
+    i {
+      color: $accent-blue;
+      margin-right: 0.5rem;
     }
 
     a {
-      display: block;
+      display: inline-block;
       font-size: 0.8rem;
       font-weight: 600; // Increased weight slightly to match the image
       text-decoration: none;

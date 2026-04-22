@@ -8,6 +8,7 @@
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 .wrapper {
@@ -19,7 +20,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     margin-left: 200px;
     width: calc(100% - 200px);
   }
@@ -97,7 +98,7 @@ body {
 }
 .sidebar__nav {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .sidebar__nav ul {
   list-style: none;
@@ -109,10 +110,15 @@ body {
   width: 100%;
 }
 .sidebar__nav li {
-  text-align: center;
+  text-align: left;
+  padding-left: 1rem;
+}
+.sidebar__nav i {
+  color: #0ea5e9;
+  margin-right: 0.5rem;
 }
 .sidebar__nav a {
-  display: block;
+  display: inline-block;
   font-size: 0.8rem;
   font-weight: 600;
   text-decoration: none;
@@ -166,7 +172,8 @@ body {
   position: relative;
   overflow: hidden;
   color: inherit;
-  z-index: 1; /* sits below the drawer */
+  z-index: 1;
+  /* sits below the drawer */
 }
 .hero-mbl .btn__outline2 {
   position: fixed;
@@ -224,7 +231,8 @@ body {
 .mobile-drawer {
   position: fixed;
   top: 0;
-  left: -50vw; /* hidden off the LEFT edge */
+  left: -50vw;
+  /* hidden off the LEFT edge */
   width: 50vw;
   height: 100vh;
   background: white;
@@ -246,8 +254,10 @@ body {
   display: none;
   position: fixed;
   top: 0;
-  left: 50vw; /* starts at centre */
-  width: 50vw; /* covers only right half */
+  left: 50vw;
+  /* starts at centre */
+  width: 50vw;
+  /* covers only right half */
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
   z-index: 999;
@@ -264,8 +274,9 @@ body {
   right: 16px;
   background: none;
   border: none;
-  color: black;
-  font-size: 28px;
+  color: #999;
+  font-size: 2.5rem;
+  font-weight: 600;
   cursor: pointer;
   line-height: 1;
 }
@@ -277,9 +288,9 @@ body {
 }
 
 .drawer-logo .logo-initial {
-  font-size: 28px;
-  font-weight: 700;
-  color: black;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #0ea5e9;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   width: 56px;
@@ -296,54 +307,77 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 1.65rem;
+}
+
+.drawer-nav li {
+  padding-left: 1rem;
 }
 
 .drawer-nav a {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 0.5rem;
   color: black;
   text-decoration: none;
   font-size: 15px;
-  padding: 10px 12px;
+  padding-bottom: 8px;
   border-radius: 8px;
-  transition: background 0.2s, color 0.2s;
+  transition: color 0.2s;
+  position: relative;
 }
-
+.drawer-nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25px;
+  height: 2px;
+  background-color: #0ea5e9;
+  border-radius: 2px;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
 .drawer-nav a:hover {
-  background: rgba(255, 255, 255, 0.08);
-  color: black;
+  color: #555555;
+}
+.drawer-nav a:hover::after {
+  opacity: 1;
 }
 
 .drawer-nav i {
   width: 18px;
   text-align: center;
-  opacity: 0.7;
+  color: #0ea5e9;
+  opacity: 0.9;
+  margin-right: 0.5rem;
 }
 
 /* Social icons */
 .drawer-social {
-  margin-top: auto;
   display: flex;
-  gap: 16px;
+  gap: 0.75rem;
   justify-content: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e0e0e0;
 }
 
 .drawer-social a {
-  color: black;
-  font-size: 18px;
-  transition: color 0.2s;
+  text-decoration: none;
+  color: #999;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
 }
 
 .drawer-social a:hover {
-  color: black;
+  color: #0ea5e9;
 }
 
 .hero-desk {
   height: 100vh;
   margin-left: 200px;
-  width: 100%;
+  width: calc(100% - 200px);
   background: url("../assets/bg-img.png") no-repeat center center/cover;
   position: relative;
   color: inherit;
@@ -533,7 +567,8 @@ body {
 }
 .scs-carousel .carousel-viewport {
   width: 100%;
-  overflow: hidden;
+  overflow-x: clip;
+  overflow-y: visible;
   border-radius: 12px;
   background: #fff;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -598,10 +633,17 @@ body {
   color: #666;
 }
 
+@media (min-width: 768px) and (max-width: 960px) {
+  .carousel-item {
+    padding: 20px;
+  }
+}
 @media (min-width: 768px) {
   .scs-carousel {
+    width: 100%;
     max-width: 1200px;
     padding: 10% 0;
+    align-self: center;
   }
 }
 .contact-section {
@@ -710,5 +752,3 @@ body {
     padding: 10% 0;
   }
 }
-
-/*# sourceMappingURL=style.css.map */

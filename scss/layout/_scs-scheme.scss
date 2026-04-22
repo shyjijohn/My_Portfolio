@@ -34,11 +34,11 @@ $accent-blue: #0ea5e9;
   // 2. The Viewport (The Window)
   .carousel-viewport {
     width: 100%;
-    overflow: hidden;
+    overflow-x: clip;
+    overflow-y: visible;
     border-radius: 12px;
     background: #fff;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2
-    );
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   }
 
   // 3. The long strip containing all slides
@@ -121,11 +121,17 @@ $accent-blue: #0ea5e9;
   }
 }
 
+@media (min-width: 768px) and (max-width: 960px) {
+  .carousel-item {
+    padding: 20px;
+  }
+}
+
 @media (min-width: 768px) {
   .scs-carousel {
+    width: 100%;
     max-width: 1200px;
-    // margin-left: $sidebar-width; // Push content to the right of the sidebar
-    // width: calc(100% - $sidebar-width);
     padding: 10% 0;
+    align-self: center;
   }
 }
