@@ -7,6 +7,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Portfolio - Shyji John</title>
   <link rel="stylesheet" href="css/style.css?v=3" />
+  <!-- <link rel="stylesheet" href="css-Styles/mobile-drawer.css" /> -->
+  <!-- <link rel="stylesheet" href="css-Styles/blinking cursor.css"> -->
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
@@ -43,30 +46,64 @@
 
   <div class="mobile-only">
     <section class="hero-mbl">
-      <div class="btn__outline2">
+      <div class="btn__outline2" id="hamburger-btn">
         <div class="menu_div"></div>
         <div class="menu_div"></div>
         <div class="menu_div"></div>
       </div>
 
       <div class="hero-mbl__overlay">
-        <h1 class="hero-mbl__title">My Name is <span>Shyji John</span></h1>
-        <p class="hero-mbl__subtitle">I'm a Web Developer</p>
-        <!-- <a href="#bio" class="scroll-down">Scroll Down <i class="fas fa-chevron-down"></i></a> -->
+        <h1 class="hero-mbl__title">My Name is <span id="name-typed-mbl"></span></h1>
+        <p class="hero-mbl__subtitle">I'm a <span id="role-typed-mbl"></span></p>
+      </div>
+      <!-- <a href="#bio" class="scroll-down">Scroll Down <i class="fas fa-chevron-down"></i></a> -->
     </section>
+
+
+
+    <!-- ....... -->
+
+    <!-- Overlay backdrop -->
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+
+    <!-- Slide-out drawer -->
+    <nav class="mobile-drawer" id="mobile-drawer">
+      <button class="drawer-close" id="drawer-close">&times;</button>
+
+      <div class="drawer-logo">
+        <span class="logo-initial">SJ</span>
+      </div>
+
+      <ul class="drawer-nav">
+        <li><a href="#about"><i class="fas fa-user"></i> About Me</a></li>
+        <li><a href="#portfolio"><i class="fas fa-briefcase"></i> My Portfolio</a></li>
+        <li><a href="#coding"><i class="fas fa-code"></i> Coding Examples</a></li>
+        <li><a href="#scheme"><i class="fas fa-layer-group"></i> SCS Scheme</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact Me</a></li>
+      </ul>
+
+      <div class="drawer-social">
+        <a href="mailto:shyjijohn90@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/shyjijohn/" target="_blank" aria-label="LinkedIn"><i
+            class="fab fa-linkedin-in"></i></a>
+      </div>
+    </nav>
   </div>
-  </div>
+
+  <!-- ....... -->
+
+
 
   <div class="desktop-only">
     <section class="hero-desk">
       <div class="hero-desk__overlay">
-        <h1 class="hero-desk__title">My Name is <span>Shyji John</span></h1>
-        <p class="hero-desk__subtitle">I'm a Web Developer</p>
-        <!-- <a href="#bio" class="scroll-down">Scroll Down <i class="fas fa-chevron-down"></i></a> -->
+        <h1 class="hero-desk__title">My Name is <span id="name-typed-desk"></span></h1>
+        <p class="hero-desk__subtitle">I'm a <span id="role-typed-desk"></span></p>
+      </div>
+      <!-- <a href="#bio" class="scroll-down">Scroll Down <i class="fas fa-chevron-down"></i></a> -->
     </section>
   </div>
-  </section>
-  </div>
+
 
   <div class="wrapper">
     <section class="bio-section" id="about">
@@ -209,7 +246,8 @@
                   and see how much they?ve covered in certain areas.</p>
                 <div class="score-box">
                   <p>Total Score:</p>
-                  <p><strong><a href="https://teamtreehouse.com/xxxxx" target="_blank">teamtreehouse.com/xxxxx</a></strong></p>
+                  <p><strong><a href="https://teamtreehouse.com/xxxxx"
+                        target="_blank">teamtreehouse.com/xxxxx</a></strong></p>
                 </div>
               </div>
             </div>
@@ -260,13 +298,13 @@
           </div>
         </div>
 
-        <form class="contact-form">
+        <form class="contact-form" novalidate>
           <div class="form-grid">
-            <input type="text" placeholder="First Name*" class="full-width" required>
-            <input type="text" placeholder="Last Name*" class="full-width" required>
-            <input type="email" placeholder="Email Address*" class="full-width" required>
-            <input type="text" placeholder="Subject" class="full-width">
-            <textarea placeholder="Message" class="full-width"></textarea>
+            <input type="text" id="first-name" placeholder="First Name*" class="full-width" required>
+            <input type="text" id="last-name" placeholder="Last Name*" class="full-width" required>
+            <input type="email" id="email" placeholder="Email Address*" class="full-width" required>
+            <input type="text" id="subject" placeholder="Subject" class="full-width">
+            <textarea id="message" placeholder="Message" class="full-width"></textarea>
           </div>
           <button type="submit" class="submit-btn">Submit</button>
         </form>
@@ -279,6 +317,108 @@
 
 
   </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+  <!-- <script src="js/mobile-drawer.js"></script> -->
+  <script>
+    $(document).ready(function () {
+
+      function startRoleTyping(selector) {
+        new Typed(selector, {
+          strings: ['Web Developer', 'Frontend Developer', 'UI/UX Enthusiast'],
+          typeSpeed: 60,
+          backSpeed: 40,
+          backDelay: 1800,
+          loop: true,
+          showCursor: true,
+          cursorChar: '|'
+        });
+      }
+
+      // Mobile name → then mobile role
+      new Typed('#name-typed-mbl', {
+        strings: ['Shyji John'],
+        typeSpeed: 80,
+        loop: false,
+        showCursor: false,
+        cursorChar: '|',
+        onComplete: function () {
+          startRoleTyping('#role-typed-mbl');
+        }
+      });
+
+      // Desktop name → then desktop role
+      new Typed('#name-typed-desk', {
+        strings: ['Shyji John'],
+        typeSpeed: 80,
+        loop: false,
+        showCursor: false,
+        cursorChar: '|',
+        onComplete: function () {
+          startRoleTyping('#role-typed-desk');
+        }
+      });
+
+
+      // Hamburger menu
+      const hamburger = document.getElementById('hamburger-btn');
+      const drawer = document.getElementById('mobile-drawer');
+      const overlay = document.getElementById('drawer-overlay');
+      const closeBtn = document.getElementById('drawer-close');
+
+      function openDrawer() {
+        drawer.classList.add('open');
+        overlay.classList.add('visible');
+      }
+
+      function closeDrawer() {
+        drawer.classList.remove('open');
+        overlay.classList.remove('visible');
+      }
+
+      hamburger.addEventListener('click', openDrawer);
+      closeBtn.addEventListener('click', closeDrawer);
+      overlay.addEventListener('click', closeDrawer);
+
+      // Close drawer when a nav link is clicked
+      document.querySelectorAll('.drawer-nav a').forEach(link => {
+        link.addEventListener('click', closeDrawer);
+      });
+
+    });
+
+
+    document.querySelector('.contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const emailEl = document.getElementById('email');
+      const firstNameEl = document.getElementById('first-name');
+      const lastNameEl = document.getElementById('last-name');
+      const subjectEl = document.getElementById('subject');
+      const messageEl = document.getElementById('message');
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      [emailEl, firstNameEl, lastNameEl, subjectEl, messageEl].forEach(el => el.classList.remove('error'));
+
+      let valid = true;
+
+      if (!emailEl.value || !emailRegex.test(emailEl.value)) {
+        emailEl.classList.add('error');
+        valid = false;
+      }
+      if (!firstNameEl.value) { firstNameEl.classList.add('error'); valid = false; }
+      if (!lastNameEl.value) { lastNameEl.classList.add('error'); valid = false; }
+      if (!subjectEl.value) { subjectEl.classList.add('error'); valid = false; }
+      if (!messageEl.value) { messageEl.classList.add('error'); valid = false; }
+
+      if (valid) {
+        // form is valid — handle submission here
+      }
+    });
+  </script>
 </body>
 
 </html>
