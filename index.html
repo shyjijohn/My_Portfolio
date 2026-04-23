@@ -70,22 +70,24 @@
     <nav class="mobile-drawer" id="mobile-drawer">
       <button class="drawer-close" id="drawer-close">&times;</button>
 
-      <div class="drawer-logo">
-        <span class="logo-initial">SJ</span>
-      </div>
+      <div class="drawer-scroll-body">
+        <div class="drawer-logo">
+          <span class="logo-initial">SJ</span>
+        </div>
 
-      <ul class="drawer-nav">
-        <li><a href="#about"><i class="fas fa-user"></i> About Me</a></li>
-        <li><a href="#portfolio"><i class="fas fa-briefcase"></i> My Portfolio</a></li>
-        <li><a href="#coding"><i class="fas fa-code"></i> Coding Examples</a></li>
-        <li><a href="#scheme"><i class="fas fa-layer-group"></i> SCS Scheme</a></li>
-        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact Me</a></li>
-      </ul>
+        <ul class="drawer-nav">
+          <li><a href="#about"><i class="fas fa-user"></i> About Me</a></li>
+          <li><a href="#portfolio"><i class="fas fa-briefcase"></i> My Portfolio</a></li>
+          <li><a href="#coding"><i class="fas fa-code"></i> Coding Examples</a></li>
+          <li><a href="#scheme"><i class="fas fa-layer-group"></i> SCS Scheme</a></li>
+          <li><a href="#contact"><i class="fas fa-envelope"></i> Contact Me</a></li>
+        </ul>
 
-      <div class="drawer-social">
-        <a href="mailto:shyjijohn90@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-        <a href="https://www.linkedin.com/in/shyjijohn/" target="_blank" aria-label="LinkedIn"><i
-            class="fab fa-linkedin-in"></i></a>
+        <div class="drawer-social">
+          <a href="mailto:shyjijohn90@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://www.linkedin.com/in/shyjijohn/" target="_blank" aria-label="LinkedIn"><i
+              class="fab fa-linkedin-in"></i></a>
+        </div>
       </div>
     </nav>
   </div>
@@ -438,6 +440,13 @@
       // Close drawer when a nav link is clicked
       document.querySelectorAll('.drawer-nav a').forEach(link => {
         link.addEventListener('click', closeDrawer);
+      });
+
+      // Close drawer when switching to desktop layout (e.g. device rotation)
+      window.addEventListener('resize', function() {
+        if (window.innerWidth >= 768) {
+          closeDrawer();
+        }
       });
 
     });

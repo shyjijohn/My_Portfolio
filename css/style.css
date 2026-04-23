@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   font-family: "Inter", sans-serif;
   box-sizing: border-box;
@@ -86,6 +87,7 @@ body {
   left: 0;
   padding: 1.5rem 0.5rem 2rem 0.5rem;
   z-index: 1000;
+  overflow-y: auto;
 }
 .sidebar__logo-container {
   display: flex;
@@ -175,6 +177,17 @@ body {
   color: #0ea5e9;
 }
 
+@media (max-height: 500px) {
+  .sidebar {
+    padding: 0.75rem 0.5rem 1rem 0.5rem;
+  }
+  .sidebar__logo-container {
+    margin-bottom: 1rem;
+  }
+  .sidebar__nav ul {
+    gap: 1rem;
+  }
+}
 .hero-mbl {
   height: 100vh;
   width: 100%;
@@ -241,24 +254,18 @@ body {
 .mobile-drawer {
   position: fixed;
   top: 0;
-  left: -50vw;
-  width: 50vw;
+  left: -75vw;
+  width: 75vw;
   height: 100vh;
   background: white;
   z-index: 1000;
-  padding: 40px 24px;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  overflow-y: auto;
+  gap: 0;
+  overflow: hidden;
   transition: left 0.3s ease, box-shadow 0.3s ease;
   box-shadow: none;
-}
-@media (max-height: 500px) {
-  .mobile-drawer {
-    padding: 16px 24px;
-    gap: 16px;
-  }
 }
 
 .mobile-drawer.open {
@@ -271,10 +278,8 @@ body {
   display: none;
   position: fixed;
   top: 0;
-  left: 50vw;
-  /* starts at centre */
-  width: 50vw;
-  /* covers only right half */
+  left: 75vw;
+  width: 25vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
   z-index: 999;
@@ -296,6 +301,23 @@ body {
   font-weight: 600;
   cursor: pointer;
   line-height: 1;
+  z-index: 1;
+}
+
+/* Scrollable inner body — close button stays on the non-scrolling shell */
+.drawer-scroll-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 48px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+@media (max-height: 500px) {
+  .drawer-scroll-body {
+    padding: 48px 24px 16px;
+    gap: 16px;
+  }
 }
 
 /* Logo */
@@ -891,5 +913,3 @@ body {
     padding: 10% 0;
   }
 }
-
-/*# sourceMappingURL=style.css.map */

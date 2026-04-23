@@ -21,6 +21,7 @@
   left: 0;
   padding: 1.5rem 0.5rem 2rem 0.5rem; // Adjust padding as needed
   z-index: 1000;
+  overflow-y: auto;
 
   // 1. Logo Section
   &__logo-container {
@@ -132,5 +133,20 @@
         color: $accent-blue; // Icons change color on hover
       }
     }
+  }
+}
+
+// Compact mode for short landscape viewports
+@media (max-height: 500px) {
+  .sidebar {
+    padding: 0.75rem 0.5rem 1rem 0.5rem;
+  }
+
+  .sidebar__logo-container {
+    margin-bottom: 1rem;
+  }
+
+  .sidebar__nav ul {
+    gap: 1rem;
   }
 }
