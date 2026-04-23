@@ -242,7 +242,6 @@ body {
   position: fixed;
   top: 0;
   left: -50vw;
-  /* hidden off the LEFT edge */
   width: 50vw;
   height: 100vh;
   background: white;
@@ -251,8 +250,15 @@ body {
   display: flex;
   flex-direction: column;
   gap: 32px;
+  overflow-y: auto;
   transition: left 0.3s ease, box-shadow 0.3s ease;
   box-shadow: none;
+}
+@media (max-height: 500px) {
+  .mobile-drawer {
+    padding: 16px 24px;
+    gap: 16px;
+  }
 }
 
 .mobile-drawer.open {
@@ -319,6 +325,11 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.65rem;
+}
+@media (max-height: 500px) {
+  .drawer-nav {
+    gap: 0.75rem;
+  }
 }
 
 .drawer-nav li {
