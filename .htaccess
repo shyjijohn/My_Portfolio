@@ -1,0 +1,27 @@
+Options -Indexes
+RewriteEngine On
+
+# 1. Redirect /index.php to / (301 permanent)
+RewriteCond %{THE_REQUEST} \s/+index\.php[\s?] [NC]
+RewriteRule ^index\.php$ / [R=301,L]
+
+# 2. Route clean section URLs → index.php (Apache serves the file, URL stays clean)
+RewriteRule ^about/?$    index.php [L]
+RewriteRule ^portfolio/?$ index.php [L]
+RewriteRule ^coding/?$   index.php [L]
+RewriteRule ^scheme/?$   index.php [L]
+RewriteRule ^contact/?$  index.php [L]
+
+# 3. Route contact-handler → contact_handler.php (keeps AJAX endpoint clean)
+RewriteRule ^contact-handler/?$ contact_handler.php [L]
+
+# 4. Remove .php extension for any other PHP file accessed directly
+#    (only rewrites if the .php file actually exists)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^([^.]+)$ $1.php [L]
+
+# 5. Hide .php in the browser address bar for direct .php access
+RewriteCond %{THE_REQUEST} \s/([^.]+)\.php[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]

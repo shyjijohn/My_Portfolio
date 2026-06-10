@@ -130,3 +130,47 @@
     padding: 10% 0;
   }
 }
+
+
+// Alert popup boxes
+.alert-box {
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: 6px;
+  font-size: 0.92rem;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+
+  &.alert-success {
+    background-color: #f0fdf4;
+    border: 1px solid #86efac;
+    color: #166534;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    align-self: stretch;
+
+    p { margin: 0; }
+  }
+
+  &.alert-error {
+    background-color: #fef2f2;
+    border: 1px solid #fca5a5;
+    color: #991b1b;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 6px 0 0 0;
+
+      li::before { content: "• "; }
+    }
+  }
+}
+
+.success-divider {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #86efac;
+  margin: 0 0 20px;
+}
