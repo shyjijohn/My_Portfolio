@@ -1,19 +1,4 @@
-<!doctype html>
-<html lang="en">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Portfolio - Shyji John</title>
-  <link rel="stylesheet" href="css/style.css?v=3" />
-  <!-- <link rel="stylesheet" href="css-Styles/mobile-drawer.css" /> -->
-  <!-- <link rel="stylesheet" href="css-Styles/blinking cursor.css"> -->
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
-
-<body>
+<?php include 'partials/header.php'; ?>
 
   <section class="desktop-only">
     <aside class="sidebar">
@@ -27,11 +12,11 @@
 
       <nav class="sidebar__nav">
         <ul>
-          <li><a href="#about"><i class="fas fa-user"></i> About Me</a></li>
-          <li><a href="#portfolio"><i class="fas fa-briefcase"></i> My Portfolio</a></li>
-          <li><a href="#coding"><i class="fas fa-code"></i> Coding Examples</a></li>
-          <li><a href="#scheme"><i class="fas fa-layer-group"></i> SCS Scheme</a></li>
-          <li><a href="#contact"><i class="fas fa-envelope"></i> Contact Me</a></li>
+          <li><a href="/about"><i class="fas fa-user"></i> About Me</a></li>
+          <li><a href="/portfolio"><i class="fas fa-briefcase"></i> My Portfolio</a></li>
+          <li><a href="/coding"><i class="fas fa-code"></i> Coding Examples</a></li>
+          <li><a href="/scheme"><i class="fas fa-layer-group"></i> SCS Scheme</a></li>
+          <li><a href="/contact"><i class="fas fa-envelope"></i> Contact Me</a></li>
         </ul>
       </nav>
       <div class="sidebar__social">
@@ -76,11 +61,11 @@
         </div>
 
         <ul class="drawer-nav">
-          <li><a href="#about"><i class="fas fa-user"></i> About Me</a></li>
-          <li><a href="#portfolio"><i class="fas fa-briefcase"></i> My Portfolio</a></li>
-          <li><a href="#coding"><i class="fas fa-code"></i> Coding Examples</a></li>
-          <li><a href="#scheme"><i class="fas fa-layer-group"></i> SCS Scheme</a></li>
-          <li><a href="#contact"><i class="fas fa-envelope"></i> Contact Me</a></li>
+          <li><a href="/about"><i class="fas fa-user"></i> About Me</a></li>
+          <li><a href="/portfolio"><i class="fas fa-briefcase"></i> My Portfolio</a></li>
+          <li><a href="/coding"><i class="fas fa-code"></i> Coding Examples</a></li>
+          <li><a href="/scheme"><i class="fas fa-layer-group"></i> SCS Scheme</a></li>
+          <li><a href="/contact"><i class="fas fa-envelope"></i> Contact Me</a></li>
         </ul>
 
         <div class="drawer-social">
@@ -133,7 +118,7 @@
       <div class="project-grid">
         <article class="project-card">
           <div class="image-wrapper">
-            <img src="./assets/netmatters-homepage.png" alt="Project Name">
+            <img src="./assets/netmatters-homepage.webp" alt="Project Name1">
           </div>
           <div class="project-content">
             <h3>Netmatters Homepage</h3>
@@ -171,7 +156,7 @@
 
         <article class="project-card">
           <div class="image-wrapper">
-            <img src="./assets/gram-biller.png" alt="Project Name">
+            <img src="./assets/gram-biller.webp" alt="Project Name2">
           </div>
           <div class="project-content">
             <h3>Project 2</h3>
@@ -183,7 +168,7 @@
         </article>
         <article class="project-card">
           <div class="image-wrapper">
-            <img src="./assets/rate-grapher.png" alt="Project Name">
+            <img src="./assets/rate-grapher.webp" alt="Project Name3">
           </div>
           <div class="project-content">
             <h3>Project 3</h3>
@@ -195,7 +180,7 @@
         </article>
         <article class="project-card">
           <div class="image-wrapper">
-            <img src="./assets/solar-system.png" alt="Project Name">
+            <img src="./assets/solar-system.webp" alt="Project Name4">
           </div>
           <div class="project-content">
             <h3>Project 4</h3>
@@ -224,26 +209,29 @@
           <span class="code-filename">typingEffect.js</span>
         </div>
         <pre class="code-block"><code><span class="kw">function</span> <span class="fn">startRoleTyping</span>(selector) {
-  <span class="kw">new</span> <span class="fn">Typed</span>(selector, {
-    strings: [<span class="str">'Web Developer'</span>, <span class="str">'Frontend Developer'</span>, <span class="str">'UI/UX Enthusiast'</span>],
-    typeSpeed: <span class="num">60</span>,
-    backSpeed: <span class="num">40</span>,
-    backDelay: <span class="num">1800</span>,
-    loop: <span class="kw">true</span>,
-    showCursor: <span class="kw">true</span>,
-    cursorChar: <span class="str">'|'</span>
-  });
-}
+  
+        <span class="kw">new</span> <span class="fn">Typed</span>(selector, {
+          strings: [<span class="str">'Web Developer'</span>, <span class="str">'Frontend Developer'</span>, <span class="str">'UI/UX Enthusiast'</span>],
+          typeSpeed: <span class="num">60</span>,
+          backSpeed: <span class="num">40</span>,
+          backDelay: <span class="num">1800</span>,
+          loop: <span class="kw">true</span>,
+          showCursor: <span class="kw">true</span>,
+          cursorChar: <span class="str">'|'</span>
+        });
+      }
 
-<span class="kw">new</span> <span class="fn">Typed</span>(<span class="str">'#name-typed-desk'</span>, {
-  strings: [<span class="str">'Shyji John'</span>],
-  typeSpeed: <span class="num">80</span>,
-  loop: <span class="kw">false</span>,
-  showCursor: <span class="kw">false</span>,
-  onComplete: <span class="kw">function</span>() {
-    <span class="fn">startRoleTyping</span>(<span class="str">'#role-typed-desk'</span>);
-  }
-});</code></pre>
+        <span class="kw">new</span> <span class="fn">Typed</span>(<span class="str">'#name-typed-desk'</span>, {
+          strings: [<span class="str">'Shyji John'</span>],
+          typeSpeed: <span class="num">80</span>,
+          loop: <span class="kw">false</span>,
+          showCursor: <span class="kw">false</span>,
+          onComplete: <span class="kw">function</span>() {
+            <span class="fn">startRoleTyping</span>(<span class="str">'#role-typed-desk'</span>);
+          }
+        });
+        </code>
+        </pre>
 
         <div class="code-meta">
           <div class="code-meta-item">
@@ -337,36 +325,9 @@
       <hr style="display: block; width: 100%;">
     </div>
 
-    <section class="contact-section" id="contact">
-      <h2>Contact</h2>
+    <!-- contact section -->
 
-      <div class="contact-container">
-
-        <div class="contact-info">
-          <h3>Get In Touch</h3>
-          <p>Got a cool idea or looking for a new addition to your team? I'd love to hear from you!</p>
-          <p>Please fill out the form or use the details below to contact me regarding projects or employment. Let's
-            build something great together.</p>
-
-          <div class="contact-details">
-            <p>Email : <span>shyjijohn90@gmail.com</span></p>
-          </div>
-        </div>
-
-        <form class="contact-form" novalidate>
-          <div class="form-grid">
-            <input type="text" id="first-name" placeholder="First Name*" class="full-width" required>
-            <input type="text" id="last-name" placeholder="Last Name*" class="full-width" required>
-            <input type="email" id="email" placeholder="Email Address*" class="full-width" required>
-            <input type="text" id="subject" placeholder="Subject" class="full-width">
-            <textarea id="message" placeholder="Message" class="full-width"></textarea>
-          </div>
-          <button type="submit" class="submit-btn">Submit</button>
-        </form>
-
-      </div>
-    </section>
-
+    <?php include 'contact.php'; ?>
 
 
 
@@ -452,35 +413,54 @@
     });
 
 
-    document.querySelector('.contact-form').addEventListener('submit', function (e) {
-      e.preventDefault();
+   
+  </script>
 
-      const emailEl = document.getElementById('email');
-      const firstNameEl = document.getElementById('first-name');
-      const lastNameEl = document.getElementById('last-name');
-      const subjectEl = document.getElementById('subject');
-      const messageEl = document.getElementById('message');
 
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-      [emailEl, firstNameEl, lastNameEl, subjectEl, messageEl].forEach(el => el.classList.remove('error'));
 
-      let valid = true;
+  <script>
+    // Map URL paths to section IDs
+    const pathToSection = {
+      '/about':     'about',
+      '/portfolio': 'portfolio',
+      '/coding':    'coding',
+      '/scheme':    'scheme',
+      '/contact':   'contact'
+    };
 
-      if (!emailEl.value || !emailRegex.test(emailEl.value)) {
-        emailEl.classList.add('error');
-        valid = false;
+    // On page load, scroll to the matching section if path matches
+    (function scrollToSection() {
+      const section = pathToSection[window.location.pathname];
+      if (section) {
+        const el = document.getElementById(section);
+        if (el) {
+          // Small delay so the page fully renders before scrolling
+          setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 100);
+        }
       }
-      if (!firstNameEl.value) { firstNameEl.classList.add('error'); valid = false; }
-      if (!lastNameEl.value) { lastNameEl.classList.add('error'); valid = false; }
-      if (!subjectEl.value) { subjectEl.classList.add('error'); valid = false; }
-      if (!messageEl.value) { messageEl.classList.add('error'); valid = false; }
+    })();
 
-      if (valid) {
-        // form is valid — handle submission here
+    // Intercept nav link clicks — push clean URL then smooth-scroll
+    document.querySelectorAll('a[href^="/"]').forEach(link => {
+      const path = link.getAttribute('href');
+      if (pathToSection[path]) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          history.pushState(null, '', path);
+          const el = document.getElementById(pathToSection[path]);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+          // Close mobile drawer if open
+          const drawer = document.getElementById('mobileMenu');
+          if (drawer && drawer.classList.contains('open')) {
+            drawer.classList.remove('open');
+          }
+        });
       }
     });
   </script>
+
+
 </body>
 
 </html>
