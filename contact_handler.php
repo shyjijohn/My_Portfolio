@@ -50,12 +50,9 @@ if (!empty($errors)) {
 // 2. Send email
         $emailSent = sendContactEmail($firstName . ' ' . $lastName, $email, $subject, $message);
 
-        // Show success regardless of email result
-        // (data is saved to DB even if email fails)
         $success = true;
 
         if (!$emailSent) {
-            // Optionally log or show a soft warning
             error_log("Email failed for submission from: $email");
         }
 
