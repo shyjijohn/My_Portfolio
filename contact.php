@@ -46,7 +46,7 @@
           e.preventDefault();
 
           $.ajax({
-              url: 'contact_handler',
+              url: 'contact-handler',
               method: 'POST',
               data: $(form).serialize(),
               dataType: 'json',
@@ -81,6 +81,10 @@
                       successBox.style.display = 'none';
                       divider.style.display    = 'none';
                   }
+              },
+              error: function (xhr, status, err) {
+                  errorBox.innerHTML = '<strong>Something went wrong. Please try again later.</strong>';
+                  errorBox.style.display = '';
               }
           });
       });

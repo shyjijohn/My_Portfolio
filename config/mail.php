@@ -15,17 +15,17 @@ function sendContactEmail(string $name, string $email, string $subject, string $
     try {
         // ── Server Settings ──────────────────────────────
         $mail->isSMTP();
-        $mail->Host       = $config['MAIL_HOST'];   // sandbox.smtp.mailtrap.io
+        $mail->Host       = $config['MAIL_HOST'];   
         $mail->SMTPAuth   = true;
-        $mail->Username   = $config['MAIL_USER'];   // Mailtrap username
-        $mail->Password   = $config['MAIL_PASS'];   // Mailtrap password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // STARTTLS
-        $mail->Port       = (int) $config['MAIL_PORT']; // 2525
+        $mail->Username   = $config['MAIL_USER'];   
+        $mail->Password   = $config['MAIL_PASS'];   
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; 
+        $mail->Port       = (int) $config['MAIL_PORT']; 
 
         // ── Who It's From / To ───────────────────────────
-        $mail->setFrom('noreply@yourportfolio.com', 'Portfolio Contact Form');
-        $mail->addAddress($config['MAIL_TO']);       // your email address
-        $mail->addReplyTo($email, $name);          // so you can reply directly to the sender
+        $mail->setFrom('noreply@shyji-john.netmatters-scs.co.uk', 'Portfolio Contact Form');
+        $mail->addAddress($config['MAIL_TO']);       
+        $mail->addReplyTo($email, $name);          
 
         // ── Email Content ─────────────────────────────────
         $mail->isHTML(true);

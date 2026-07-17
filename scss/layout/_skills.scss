@@ -1,0 +1,139 @@
+// --- Color & Style Variables ---
+$bg-color: #f8fafc;
+$card-bg: #ffffff;
+$text-main: #1e293b;
+$text-muted: #64748b;
+$border-color: #e2e8f0;
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$radius: 12px;
+$transition: all 0.25s ease;
+
+// --- Category Themes (Map for easy iterations) ---
+$themes: (
+  frontend: #6366f1, // Indigo
+  backend: #10b981,  // Emerald
+  database: #06b6d4, // Cyan
+  cloud: #f59e0b,    // Amber
+  tools: #8b5cf6     // Violet
+);
+
+// --- Layout & Styles ---
+.skills-section {
+  // max-width: 1200px;
+  // margin: 0 auto;
+  // padding: 3rem 1.5rem;
+  // font-family: 'Inter', system-ui, -apple-system, sans-serif;
+
+   padding-bottom: 4%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  .skills-title {
+    
+// font-size: 1.875rem;
+//     font-weight: 700;
+//     color: $text-main;
+//     margin-bottom: 2rem;
+//     padding-bottom: 0.5rem;
+
+
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: $accent-blue;
+    position: relative;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    // gap: 1.5rem;
+    gap: 40px 30px;
+
+    // Responsive design breakpoints
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .skills-card {
+    background: $card-bg;
+    border: 1px solid $border-color;
+    border-radius: $radius;
+    padding: 1.5rem;
+    box-shadow: $shadow-sm;
+    transition: $transition;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: $shadow-md;
+    }
+
+    h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: $text-main;
+      margin-top: 0;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .badge-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+
+      span {
+        font-size: 0.813rem;
+        font-weight: 500;
+        padding: 0.35rem 0.75rem;
+        border-radius: 6px;
+        transition: $transition;
+      }
+    }
+
+    // Apply color accents dynamically to each card category using the SCSS Map
+    @each $key, $color in $themes {
+      &.#{$key} {
+        border-top: 4px solid $color; // Distinct top border accent
+        
+        h3 {
+          color: darken($color, 15%);
+        }
+
+        .badge-container span {
+          background-color: rgba($color, 0.08);
+          color: darken($color, 10%);
+
+          &:hover {
+            background-color: rgba($color, 0.15);
+          }
+        }
+      }
+    }
+
+    // Stretch the last card (Tools) to span 2 columns on desktops for visual balance
+    &.tools {
+      @media (min-width: 1024px) {
+        grid-column: span 2;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .skills-section {
+    max-width: 1200px;
+    // margin-left: $sidebar-width; // Push content to the right of the sidebar
+    // width: calc(100% - $sidebar-width);
+    padding: 10% 0;
+  }
+}

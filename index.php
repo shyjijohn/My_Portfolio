@@ -13,6 +13,7 @@
       <nav class="sidebar__nav">
         <ul>
           <li><a href="/about"><i class="fas fa-user"></i> About Me</a></li>
+          <li><a href="/skills"><i class="fas fa-tools"></i> Skills & Technologies</a></li>
           <li><a href="/portfolio"><i class="fas fa-briefcase"></i> My Portfolio</a></li>
           <li><a href="/coding"><i class="fas fa-code"></i> Coding Examples</a></li>
           <li><a href="/scheme"><i class="fas fa-layer-group"></i> SCS Scheme</a></li>
@@ -108,9 +109,172 @@
       </p>
       <!-- </div> -->
     </section>
+    <!-- <div class="desktop-only">
+      <hr style="display: block; width: 100%;">
+    </div> -->
+
+
+    <section class="focus-section">
+      <div class="focus-grid">
+        
+        <!-- Card 1: What Role You Are Seeking -->
+        <div class="focus-card seeking">
+          <div class="focus-icon">
+            <!-- Target Icon -->
+            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path>
+            </svg>
+          </div>
+          <h3>What I'm Seeking</h3>
+          <p>
+            An entry-level <strong>Junior Frontend or Full-Stack Developer</strong> role where I can contribute to building clean, responsive web applications. I am eager to join a collaborative engineering team where I can learn from experienced mentors, apply my skills in React, TypeScript, and Node.js, and continuously grow my technical foundation.
+          </p>
+        </div>
+
+        <!-- Card 2: What Interests You -->
+        <div class="focus-card interest">
+          <div class="focus-icon">
+            <!-- Rocket / Interest Icon -->
+            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"></path>
+            </svg>
+          </div>
+          <h3>My Core Interests</h3>
+          <p>
+            I am deeply interested in <strong>user-centric web development</strong> and translating designs into pixel-perfect, interactive UIs. I love the logic of problem solving, whether that's writing clean, maintainable code on the frontend or connecting APIs on the backend. I’m motivated by the challenge of turning ideas into functional digital products that make life easier for users.
+          </p>
+        </div>
+
+      </div>
+    </section>
     <div class="desktop-only">
       <hr style="display: block; width: 100%;">
     </div>
+
+
+
+    <section class="skills-section" id="skills">
+      <!-- <div class="container"> -->
+      <h2 class="skills-title">Skills & Technologies</h2>
+
+      <div class="skills-grid">
+        <div class="skills-card frontend">
+          <h3>Front-End Development</h3>
+          <div class="badge-container">
+          <span>HTML5</span><span>CSS3</span><span>Tailwind CSS</span><span>SCSS</span>
+          <span>JavaScript</span><span>TypeScript</span><span>React</span><span>jQuery</span>
+          <span>AJAX</span><span>MUI</span><span>Framer Motion</span><span>Vite</span>
+          </div>
+        </div>
+
+        <div class="skills-card backend">
+          <h3>Back-End Development</h3>
+          <div class="badge-container">
+            <span>Node.js</span><span>Express.js</span><span>Laravel</span><span>PHP</span><span>RESTful APIs</span>
+          </div>
+        </div>
+
+        <div class="skills-card database">
+          <h3>Database Management</h3>
+          <div class="badge-container">
+            <span>MySQL</span><span>Firebase</span>
+          </div>
+        </div>
+
+        <div class="skills-card cloud">
+          <h3>Authentication & Cloud</h3>
+          <div class="badge-container">
+            <span>Firebase Authentication</span><span>Firebase Hosting</span><span>Clerk</span><span>Cloudinary</span>
+          </div>
+        </div>
+
+        <div class="skills-card tools">
+          <h3>Tools & Practices</h3>
+          <div class="badge-container">
+            <span>Git</span><span>GitHub</span><span>VS Code</span><span>Postman</span>
+            <span>Figma</span><span>Visual Studio</span><span>Responsive Design</span>
+            <span>Role-Based Access Control</span><span>API Integration</span><span>Agile Methodologies</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="desktop-only">
+      <hr style="display: block; width: 100%;">
+    </div>
+
+
+
+  <section class="career-section">
+    <h2 class="career-title">Career Background</h2>
+    
+    <div class="timeline">
+      
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">January 2025 – January 2026</span>
+          <h3 class="role">Full-Stack Developer (Contract)</h3>
+          <span class="company">Travel Industry Client</span>
+          <ul class="description-list">
+            <li>Independently developed a full-stack travel itinerary management platform for a travel industry client.</li>
+            <li>Built mobile-optimized, responsive frontend interfaces using <strong>React, TypeScript, and MUI</strong>.</li>
+            <li>Created <strong>Node.js/Express.js</strong> RESTful APIs to manage complex itinerary data, pricing, and user roles via <strong>MySQL JSON structures</strong>.</li>
+            <li>Integrated <strong>Clerk</strong> for secure authentication, <strong>Cloudinary</strong> for image handling, and <strong>ChatGPT API</strong> for automated PDF itinerary parsing.</li>
+            <li>Collaborated closely with the client to gather requirements and iteratively deploy a tailored solution.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">August 2024 – January 2025</span>
+          <h3 class="role">Software Developer</h3>
+          <span class="company">Marvenics</span>
+          <ul class="description-list">
+            <li>Developed responsive dashboards and landing pages for a restaurant table booking application using <strong>React, TypeScript, and MUI</strong>.</li>
+            <li>Collaborated closely within an <strong>Agile Scrum</strong> team alongside UI/UX designers and backend developers to deliver features and integrate Node.js APIs.</li>
+            <li>Maintained high code quality and component reusability through active participation in peer code reviews and <strong>Git version control</strong>.</li>
+            <li>Contributed actively to sprint planning, daily stand-ups, and precise task estimations.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">July 2024 – December 2024</span>
+          <h3 class="role">Volunteer Frontend Developer</h3>
+          <span class="company">TheITApprentice</span>
+          <ul class="description-list">
+            <li>Created, enhanced, and reworked multiple responsive landing pages using <strong>TypeScript, React, and MUI</strong>.</li>
+            <li>Utilized <strong>Framer Motion</strong> to implement smooth animations and elevate the interactive user experience.</li>
+            <li>Ensured layout fluidness and structural integrity across varied screen configurations and mobile viewports.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">2020 – 2021 | India</span>
+          <h3 class="role">Junior Software Developer</h3>
+          <span class="company">Shadreams</span>
+          <!-- <div class="tech-stack-tag mb-3">
+            <strong>Tech Stack:</strong> HTML, CSS, Tailwind CSS, MySQL, C#, WPF
+          </div> -->
+          <ul class="description-list">
+            <li>Co-designed and developed a desktop and web-based billing and inventory management application for a small-scale jewellery retail business.</li>
+            <li>Simplified UI/UX workflows to enhance day-to-day user efficiency and resolved cross-platform UI rendering bugs in <strong>C# and WPF</strong>.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <div class="desktop-only">
+    <hr style="display: block; width: 100%;">
+  </div>
 
 
     <section class="portfolio" id="portfolio">
@@ -118,15 +282,34 @@
       <div class="project-grid">
         <article class="project-card">
           <div class="image-wrapper">
-            <img src="./assets/netmatters-homepage.webp" alt="Project Name1">
+            <img src="./assets/netmatters-homepage.webp" alt="Netmatters Homepage Recreation">
           </div>
           <div class="project-content">
-            <h3>Netmatters Homepage</h3>
+            <h3>Netmatters Homepage Recreation</h3>
             <p class="project-desc">Recreation of the Netmatters company homepage - Built with <strong>HTML</strong>,
               <strong>SCSS</strong>, and <strong>JavaScript</strong> - featuring a responsive layout and CSS animations.
             </p>
             <a href="https://netmatters.shyji-john.netmatters-scs.co.uk/" class="view-project" target="_blank">
               Live Demo <span class="arrow">&rarr;</span>
+            <a href="https://github.com/shyjijohn/Netmatters_Homepage" class="view-project" target="_blank">
+              Github <span class="arrow">&rarr;</span>
+            </a>
+          </div>
+        </article>
+        
+        <article class="project-card">
+          <div class="image-wrapper">
+            <img src="./assets/js-array-pic.webp" alt="Random Picture Mapper">
+          </div>
+          <div class="project-content">
+            <h3>Random Picture Mapper</h3>
+            <p class="project-desc">A project developed using <strong>HTML</strong>, <strong>SCSS</strong>, and <strong>JavaScript</strong> that retrieves random images from the web and maps them to individual email addresses.
+            </p>
+            <a href="https://shyjijohn.github.io/Javascript_Array/" class="view-project" target="_blank">
+              Live Demo <span class="arrow">&rarr;</span>
+            </a>
+            <a href="https://github.com/shyjijohn/Javascript_Array" class="view-project" target="_blank">
+              Github <span class="arrow">&rarr;</span>
             </a>
           </div>
         </article>
@@ -156,37 +339,46 @@
 
         <article class="project-card">
           <div class="image-wrapper">
-            <img src="./assets/gram-biller.webp" alt="Project Name2">
+            <img src="./assets/gram-biller.webp" alt="Gram Biller">
           </div>
           <div class="project-content">
-            <h3>Project 2</h3>
-            <p class="project-desc">Just a placeholder.</p>
-            <a href="#" class="view-project">
+            <h3>Gram Biller</h3>
+            <p class="project-desc">A billing and invoice management application built with <strong>HTML</strong>, <strong>CSS</strong>, and <strong>TypeScript</strong> to create, manage, and organize customer bills efficiently through a simple and user-friendly interface.</p>
+            <a href="https://shyjijohn.github.io/Gram-Biller" class="view-project" target="_blank">
               Live Demo <span class="arrow">&rarr;</span>
+            </a>
+            <a href="https://github.com/shyjijohn/Gram-Biller" class="view-project" target="_blank">
+              Github <span class="arrow">&rarr;</span>
             </a>
           </div>
         </article>
         <article class="project-card">
           <div class="image-wrapper">
-            <img src="./assets/rate-grapher.webp" alt="Project Name3">
+            <img src="./assets/rate-grapher.webp" alt="Global Currency Converter">
           </div>
           <div class="project-content">
-            <h3>Project 3</h3>
-            <p class="project-desc">Just a placeholder.</p>
-            <a href="#" class="view-project">
+            <h3>Global Currency Converter</h3>
+            <p class="project-desc">A responsive web application built with <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong> for converting currencies quickly and efficiently using live exchange rate data.</p>
+            <a href="https://shyjijohn.github.io/Currency-Converter/" class="view-project" target="_blank">
               Live Demo <span class="arrow">&rarr;</span>
+            </a>
+            <a href="https://github.com/shyjijohn/Currency-Converter" class="view-project" target="_blank">
+              Github <span class="arrow">&rarr;</span>
             </a>
           </div>
         </article>
         <article class="project-card">
           <div class="image-wrapper">
-            <img src="./assets/solar-system.webp" alt="Project Name4">
+            <img src="./assets/solar-system.webp" alt="Solar System">
           </div>
           <div class="project-content">
-            <h3>Project 4</h3>
-            <p class="project-desc">Just a placeholder.</p>
-            <a href="#" class="view-project">
+            <h3>Solar System</h3>
+            <p class="project-desc">An interactive visualization of our solar system built with <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>.</p>
+            <a href="https://shyjijohn.github.io/Solar-System/" class="view-project" target="_blank">
               Live Demo <span class="arrow">&rarr;</span>
+            </a>
+            <a href="https://github.com/shyjijohn/Solar-System" class="view-project" target="_blank">
+              Github <span class="arrow">&rarr;</span>
             </a>
           </div>
         </article>
@@ -423,6 +615,7 @@
     // Map URL paths to section IDs
     const pathToSection = {
       '/about':     'about',
+      '/skills':    'skills',
       '/portfolio': 'portfolio',
       '/coding':    'coding',
       '/scheme':    'scheme',

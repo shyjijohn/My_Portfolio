@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shyji-john.netmatters-scs.co.uk/sitemap.xml
