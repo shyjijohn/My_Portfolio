@@ -11,6 +11,7 @@
       <nav class="sidebar__nav">
         <ul>
           <li><a href="#about"><i class="fas fa-user"></i> About Me</a></li>
+          <li><a href="/skills"><i class="fas fa-tools"></i> Skills & Technologies</a></li>
           <li><a href="#portfolio"><i class="fas fa-briefcase"></i> My Portfolio</a></li>
           <li><a href="#coding"><i class="fas fa-code"></i> Coding Examples</a></li>
           <li><a href="#scheme"><i class="fas fa-layer-group"></i> SCS Scheme</a></li>
@@ -60,6 +61,7 @@
 
         <ul class="drawer-nav">
           <li><a href="#about"><i class="fas fa-user"></i> About Me</a></li>
+          <li><a href="/skills"><i class="fas fa-tools"></i> Skills & Technologies</a></li>
           <li><a href="#portfolio"><i class="fas fa-briefcase"></i> My Portfolio</a></li>
           <li><a href="#coding"><i class="fas fa-code"></i> Coding Examples</a></li>
           <li><a href="#scheme"><i class="fas fa-layer-group"></i> SCS Scheme</a></li>
