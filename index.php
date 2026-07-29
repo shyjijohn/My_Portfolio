@@ -461,6 +461,42 @@
         </div>
       </div>
     </section>
+
+    <div class="code-example-card">
+  <div class="code-example-header">
+    <span class="code-dot red"></span>
+    <span class="code-dot yellow"></span>
+    <span class="code-dot green"></span>
+    <span class="code-filename">DatabaseSeeder.php</span>
+  </div>
+  <pre class="code-block"><code><span class="kw">public function</span> <span class="fn">run</span>(): <span class="kw">void</span>
+{
+    <span class="fn">User</span>::<span class="fn">create</span>([
+        <span class="str">'name'</span> => <span class="str">'Admin'</span>,
+        <span class="str">'email'</span> => <span class="str">'admin@admin.com'</span>,
+        <span class="str">'password'</span> => <span class="fn">Hash</span>::<span class="fn">make</span>(<span class="str">'password'</span>),
+    ]);
+
+    <span class="fn">Company</span>::<span class="fn">factory</span>(<span class="num">10</span>)-><span class="fn">create</span>()-><span class="fn">each</span>(<span class="kw">function</span> (<span class="var">$company</span>) {
+        <span class="fn">Employee</span>::<span class="fn">factory</span>(<span class="num">5</span>)-><span class="fn">create</span>([<span class="str">'company_id'</span> => <span class="var">$company</span>-><span class="var">id</span>]);
+    });
+}</code></pre>
+
+  <div class="code-meta">
+    <div class="code-meta-item">
+      <span class="meta-label">Language</span>
+      <span class="meta-value">PHP - using Laravel Factories & Seeders</span>
+    </div>
+    <div class="code-meta-item">
+      <span class="meta-label">What it does</span>
+      <span class="meta-value">Seeds the database with default administrator credentials (<em>"admin@admin.com"</em>) and automatically generates mock data for 10 companies and 50 employees for testing.</span>
+    </div>
+    <div class="code-meta-item">
+      <span class="meta-label">Why I used it</span>
+      <span class="meta-value">Automates environment setup so the application is immediately testable and functional upon running a fresh database migration.</span>
+    </div>
+  </div>
+</div>
     <div class="desktop-only">
       <hr style="display: block; width: 100%;">
     </div>
