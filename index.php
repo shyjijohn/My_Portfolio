@@ -314,6 +314,23 @@
           </div>
         </article>
 
+        <article class="project-card">
+          <div class="image-wrapper">
+            <img src="./assets/laravel_adminpanel.webp" alt="Corporate Admin Panel">
+          </div>
+          <div class="project-content">
+            <h3>Corporate Admin Panel</h3>
+            <p class="project-desc">A mini-CRM admin system built with <strong>Laravel</strong>, <strong>PHP</strong>, and <strong>MySQL</strong> - featuring full CRUD functionality for managing companies and employees, secure authentication, file upload storage, and paginated data tables.
+            </p>
+            <a href="https://laravel.shyji-john.netmatters-scs.co.uk/" class="view-project" target="_blank">
+              Live Demo <span class="arrow">&rarr;</span>
+            </a>
+            <a href="https://github.com/shyjijohn/Laravel_AdminPanel" class="view-project" target="_blank">
+              Github <span class="arrow">&rarr;</span>
+            </a>
+          </div>
+        </article>
+
         <!-- <article class="project-card">
           <div class="image-wrapper">
             <img src="./assets/padagan.png" alt="Project Name">
